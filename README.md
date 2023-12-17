@@ -109,25 +109,23 @@ SciBERT_model = AutoModel.from_pretrained('allenai/scibert_scivocab_uncased', ca
 ```
 
 ### 3.2 MegaMolBART
-Run `downsload_MegaBolBART.sh`, and the output structure is like:
+Run `download_MegaMolBART.sh` (credit to [RetMol](https://github.com/NVlabs/RetMol/blob/main/download_scripts/download_models.sh)). The output structure is like:
 ```
-.
 ├── bart_vocab.txt
-├── checkpoints
-│   ├── iter_0134000
-│   │   ├── mp_rank_00
-│   │   │   └── model_optim_rng.pt
-│   │   ├── mp_rank_00_model_states.pt
-│   │   ├── zero_pp_rank_0_mp_rank_00optim_states.pt
-│   │   ├── zero_pp_rank_1_mp_rank_00optim_states.pt
-│   │   ├── zero_pp_rank_2_mp_rank_00optim_states.pt
-│   │   ├── zero_pp_rank_3_mp_rank_00optim_states.pt
-│   │   ├── zero_pp_rank_4_mp_rank_00optim_states.pt
-│   │   ├── zero_pp_rank_5_mp_rank_00optim_states.pt
-│   │   ├── zero_pp_rank_6_mp_rank_00optim_states.pt
-│   │   └── zero_pp_rank_7_mp_rank_00optim_states.pt
-│   └── latest_checkpointed_iteration.txt
-└── megamolbart_0.1.zip
+└── checkpoints
+    ├── iter_0134000
+    │   ├── mp_rank_00
+    │   │   └── model_optim_rng.pt
+    │   ├── mp_rank_00_model_states.pt
+    │   ├── zero_pp_rank_0_mp_rank_00optim_states.pt
+    │   ├── zero_pp_rank_1_mp_rank_00optim_states.pt
+    │   ├── zero_pp_rank_2_mp_rank_00optim_states.pt
+    │   ├── zero_pp_rank_3_mp_rank_00optim_states.pt
+    │   ├── zero_pp_rank_4_mp_rank_00optim_states.pt
+    │   ├── zero_pp_rank_5_mp_rank_00optim_states.pt
+    │   ├── zero_pp_rank_6_mp_rank_00optim_states.pt
+    │   └── zero_pp_rank_7_mp_rank_00optim_states.pt
+    └── latest_checkpointed_iteration.txt
 ```
 
 ### 3.3 GNN and GraphMVP
