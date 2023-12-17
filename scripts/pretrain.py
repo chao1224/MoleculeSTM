@@ -246,14 +246,12 @@ if __name__ == "__main__":
         if args.dataset == "PubChemSTM":
             dataset = PubChemSTM_Datasets_SMILES(dataset_root)
         elif args.dataset == "PubChemSTM1K":
+            # only for testing
             dataset = PubChemSTM_SubDatasets_SMILES(dataset_root, size=1000)
-        elif args.dataset == "PubChemSTM10K":
-            dataset = PubChemSTM_SubDatasets_SMILES(dataset_root, size=10000)
         elif args.dataset == "PubChemSTM_Raw":
             dataset = PubChemSTM_Datasets_Raw_SMILES(dataset_root)
-        elif args.dataset == "PubChemSTM1K_Raw":
-            dataset = PubChemSTM_SubDatasets_Raw_SMILES(dataset_root, size=1000)
         elif args.dataset == "PubChemSTM10K_Raw":
+            # only for testing
             dataset = PubChemSTM_SubDatasets_Raw_SMILES(dataset_root, size=10000)
         else:
             raise Exception
