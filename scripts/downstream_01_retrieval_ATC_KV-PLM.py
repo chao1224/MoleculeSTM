@@ -202,7 +202,6 @@ if __name__ == "__main__":
     
     T_max = max(args.T_list) - 1
 
-    # TODO: will tune more prompt_templates
     prompt_template = "This molecule is for {}."
 
     initial_test_acc_list, optimal_test_acc_list = [], []
