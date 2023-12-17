@@ -177,9 +177,9 @@ if __name__ == "__main__":
 
     parser.add_argument("--batch_size", type=int, default=32)
     parser.add_argument("--text_lr", type=float, default=1e-4)
-    parser.add_argument("--mol_lr", type=float, default=1e-4)
-    parser.add_argument("--text_lr_scale", type=float, default=0.1)
-    parser.add_argument("--mol_lr_scale", type=float, default=0.1)
+    parser.add_argument("--mol_lr", type=float, default=1e-5)
+    parser.add_argument("--text_lr_scale", type=float, default=1)
+    parser.add_argument("--mol_lr_scale", type=float, default=1)
     parser.add_argument("--num_workers", type=int, default=8)
     parser.add_argument("--epochs", type=int, default=100)
     parser.add_argument("--decay", type=float, default=0)
@@ -246,14 +246,12 @@ if __name__ == "__main__":
         if args.dataset == "PubChemSTM":
             dataset = PubChemSTM_Datasets_SMILES(dataset_root)
         elif args.dataset == "PubChemSTM1K":
+            # only for testing
             dataset = PubChemSTM_SubDatasets_SMILES(dataset_root, size=1000)
-        elif args.dataset == "PubChemSTM10K":
-            dataset = PubChemSTM_SubDatasets_SMILES(dataset_root, size=10000)
         elif args.dataset == "PubChemSTM_Raw":
             dataset = PubChemSTM_Datasets_Raw_SMILES(dataset_root)
-        elif args.dataset == "PubChemSTM1K_Raw":
-            dataset = PubChemSTM_SubDatasets_Raw_SMILES(dataset_root, size=1000)
         elif args.dataset == "PubChemSTM10K_Raw":
+            # only for testing
             dataset = PubChemSTM_SubDatasets_Raw_SMILES(dataset_root, size=10000)
         else:
             raise Exception

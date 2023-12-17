@@ -14,7 +14,7 @@ from torch.utils.data import DataLoader as torch_DataLoader
 from torch_geometric.loader import DataLoader as pyg_DataLoader
 
 from transformers import AutoModel, AutoTokenizer
-from MoleculeSTM.datasets import PubChem_Datasets_SMILES, PubChem_Datasets_Graph, DrugBank_Datasets_SMILES_retrieval, DrugBank_Datasets_Graph_retrieval
+from MoleculeSTM.datasets import PubChemSTM_Datasets_SMILES, PubChemSTM_Datasets_Graph, DrugBank_Datasets_SMILES_retrieval, DrugBank_Datasets_Graph_retrieval
 from MoleculeSTM.models.mega_molbart.mega_mol_bart import MegaMolBART
 from MoleculeSTM.models import GNN, GNN_graphpred
 from MoleculeSTM.utils import prepare_text_tokens, get_molecule_repr_MoleculeSTM
@@ -289,7 +289,6 @@ if __name__ == "__main__":
     if args.text_type == "SciBERT":
         pretrained_SciBERT_folder = os.path.join(args.dataspace_path, 'pretrained_SciBERT')
         text_tokenizer = AutoTokenizer.from_pretrained('allenai/scibert_scivocab_uncased', cache_dir=pretrained_SciBERT_folder)
-        # TODO: check https://github.com/huggingface/transformers/blob/main/src/transformers/models/bert/modeling_bert.py#L1501
         text_model = AutoModel.from_pretrained('allenai/scibert_scivocab_uncased', cache_dir=pretrained_SciBERT_folder).to(device)
         text_dim = 768
     else:
@@ -319,10 +318,9 @@ if __name__ == "__main__":
             print("Random init for MegaMolBART.")
         elif args.model_loading_mode == "load_mode_1":
             # This is loading from the pretarined_MegaMolBART
-            # --input_model_dir=../data/pretrained_MegaMolBART/checkpoints
-            MegaMolBART_wrapper = MegaMolBART(input_dir="../data/pretrained_MegaMolBART/checkpoints", output_dir=None)
+            MegaMolBART_wrapper = MegaMolBART(vocab_path=args.vocab_path, input_dir="../data/pretrained_MegaMolBART/checkpoints", output_dir=None)
             molecule_model = MegaMolBART_wrapper.model
-            print("Loading from ../data/pretrained_MegaMolBART/checkpoint.")
+            print("Loading from ../data/pretrained_MegaMolBART/checkpoints.")
         molecule_dim = 256
 
     else:
@@ -381,8 +379,8 @@ if __name__ == "__main__":
             template = "SMILES_pharmacodynamics_removed_from_PubChem_{}_Raw.txt"
         full_dataset = dataset_class(dataset_folder, 'full', neg_sample_size=T_max, template=template)
 
-        dataset_root = os.path.join(args.dataspace_path, "PubChem_data")
-        retrieval_dataset = PubChem_Datasets_SMILES(dataset_root)
+        dataset_root = os.path.join(args.dataspace_path, "PubChemSTM_data")
+        retrieval_dataset = PubChemSTM_Datasets_SMILES(dataset_root)
 
     else:
         dataset_class = DrugBank_Datasets_Graph_retrieval
@@ -407,8 +405,8 @@ if __name__ == "__main__":
             template = "SMILES_pharmacodynamics_removed_from_PubChem_{}_Raw.txt"
         full_dataset = dataset_class(dataset_folder, 'full', neg_sample_size=T_max, processed_dir_prefix=processed_dir_prefix, template=template)
 
-        dataset_root = os.path.join(args.dataspace_path, "PubChem_data")
-        retrieval_dataset = PubChem_Datasets_Graph(dataset_root)
+        dataset_root = os.path.join(args.dataspace_path, "PubChemSTM_data")
+        retrieval_dataset = PubChemSTM_Datasets_Graph(dataset_root)
 
     full_dataloader = dataloader_class(full_dataset, batch_size=args.batch_size, shuffle=True, num_workers=args.num_workers) # The program will get blcoked with none-zero num_workers
     retrieval_dataloader = dataloader_class(retrieval_dataset, batch_size=args.batch_size, shuffle=False, num_workers=args.num_workers)

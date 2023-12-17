@@ -194,7 +194,6 @@ if __name__ == "__main__":
     if args.text_type == "SciBERT":
         pretrained_SciBERT_folder = os.path.join(args.dataspace_path, 'pretrained_SciBERT')
         text_tokenizer = AutoTokenizer.from_pretrained('allenai/scibert_scivocab_uncased', cache_dir=pretrained_SciBERT_folder)
-        # TODO: check https://github.com/huggingface/transformers/blob/main/src/transformers/models/bert/modeling_bert.py#L1501
         text_model = AutoModel.from_pretrained('allenai/scibert_scivocab_uncased', cache_dir=pretrained_SciBERT_folder).to(device)
         text_dim = 768
     else:
@@ -224,10 +223,9 @@ if __name__ == "__main__":
             print("Random init for MegaMolBART.")
         elif args.model_loading_mode == "load_mode_1":
             # This is loading from the pretarined_MegaMolBART
-            # --input_model_dir=../data/pretrained_MegaMolBART/checkpoints
-            MegaMolBART_wrapper = MegaMolBART(input_dir="../data/pretrained_MegaMolBART/checkpoints", output_dir=None)
+            MegaMolBART_wrapper = MegaMolBART(vocab_path=args.vocab_path, input_dir="../data/pretrained_MegaMolBART/checkpoints", output_dir=None)
             molecule_model = MegaMolBART_wrapper.model
-            print("Loading from ../data/pretrained_MegaMolBART/checkpoint.")
+            print("Loading from ../data/pretrained_MegaMolBART/checkpoints.")
         molecule_dim = 256
 
     else:
@@ -277,7 +275,6 @@ if __name__ == "__main__":
 
     T_max = max(args.T_list) - 1
 
-    # TODO: will tune more prompt_templates
     prompt_template = "This molecule is for {}."
 
     initial_test_acc_list, optimal_test_acc_list = [], []

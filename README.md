@@ -2,11 +2,19 @@
 
 Authors: Shengchao Liu, Weili Nie, Chengpeng Wang, Jiarui Lu, Zhuoran Qiao, Ling Liu, Jian Tang<sup>\*</sup>, Chaowei Xiao<sup>\*</sup>, Anima Anandkumar<sup>\*</sup>
 
-<sup>\*</sup> Equal advising
+<sup>\*</sup> jointly supervised
 
 [[Project Page](https://chao1224.github.io/MoleculeSTM)] [[ArXiv](https://arxiv.org/abs/2212.10789)]
 [[Datasets on Hugging Face](https://huggingface.co/datasets/chao1224/MoleculeSTM/tree/main)] [[Checkpoints on Hugging Face](https://huggingface.co/chao1224/MoleculeSTM/tree/main)]
 
+
+<p align="center">
+  <img src="pic/pipeline.png" /> 
+</p>
+
+<p align="left">
+  <img src="pic/final.gif" width="100%" /> 
+</p>
 
 ## 1 Environment
 
@@ -86,6 +94,7 @@ As confirmed with PubChem group, performing research on these data is not violat
 3. `bash step_02.sh`. This will download all the SDF files, with SMILES, 2D graph, and computed molecular properties. This may take hours.
 4. `python step_03_filter_out_SDF.py`. This will filter all the molecules with textual descriptions and save them int the SDF file. This may take <2 hours.
 5. `python step_04_merge_SDF.py`. This will gather all the molecules into a single SDF file.
+6. `python step_05_sample_extraction.py`. This will generate the `CID2SMILES.csv` file.
 
 ### 2.2 Downstream Datasets
 
@@ -108,25 +117,23 @@ SciBERT_model = AutoModel.from_pretrained('allenai/scibert_scivocab_uncased', ca
 ```
 
 ### 3.2 MegaMolBART
-Run `downsload_MegaBolBART.sh`, and the output structure is like:
+Run `download_MegaMolBART.sh` (credit to [RetMol](https://github.com/NVlabs/RetMol/blob/main/download_scripts/download_models.sh)). The output structure is like:
 ```
-.
 ├── bart_vocab.txt
-├── checkpoints
-│   ├── iter_0134000
-│   │   ├── mp_rank_00
-│   │   │   └── model_optim_rng.pt
-│   │   ├── mp_rank_00_model_states.pt
-│   │   ├── zero_pp_rank_0_mp_rank_00optim_states.pt
-│   │   ├── zero_pp_rank_1_mp_rank_00optim_states.pt
-│   │   ├── zero_pp_rank_2_mp_rank_00optim_states.pt
-│   │   ├── zero_pp_rank_3_mp_rank_00optim_states.pt
-│   │   ├── zero_pp_rank_4_mp_rank_00optim_states.pt
-│   │   ├── zero_pp_rank_5_mp_rank_00optim_states.pt
-│   │   ├── zero_pp_rank_6_mp_rank_00optim_states.pt
-│   │   └── zero_pp_rank_7_mp_rank_00optim_states.pt
-│   └── latest_checkpointed_iteration.txt
-└── megamolbart_0.1.zip
+└── checkpoints
+    ├── iter_0134000
+    │   ├── mp_rank_00
+    │   │   └── model_optim_rng.pt
+    │   ├── mp_rank_00_model_states.pt
+    │   ├── zero_pp_rank_0_mp_rank_00optim_states.pt
+    │   ├── zero_pp_rank_1_mp_rank_00optim_states.pt
+    │   ├── zero_pp_rank_2_mp_rank_00optim_states.pt
+    │   ├── zero_pp_rank_3_mp_rank_00optim_states.pt
+    │   ├── zero_pp_rank_4_mp_rank_00optim_states.pt
+    │   ├── zero_pp_rank_5_mp_rank_00optim_states.pt
+    │   ├── zero_pp_rank_6_mp_rank_00optim_states.pt
+    │   └── zero_pp_rank_7_mp_rank_00optim_states.pt
+    └── latest_checkpointed_iteration.txt
 ```
 
 ### 3.3 GNN and GraphMVP
