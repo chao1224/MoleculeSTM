@@ -2,11 +2,19 @@
 
 Authors: Shengchao Liu, Weili Nie, Chengpeng Wang, Jiarui Lu, Zhuoran Qiao, Ling Liu, Jian Tang<sup>\*</sup>, Chaowei Xiao<sup>\*</sup>, Anima Anandkumar<sup>\*</sup>
 
-<sup>\*</sup> Equal advising
+<sup>\*</sup> jointly supervised
 
 [[Project Page](https://chao1224.github.io/MoleculeSTM)] [[ArXiv](https://arxiv.org/abs/2212.10789)]
 [[Datasets on Hugging Face](https://huggingface.co/datasets/chao1224/MoleculeSTM/tree/main)] [[Checkpoints on Hugging Face](https://huggingface.co/chao1224/MoleculeSTM/tree/main)]
 
+
+<p align="center">
+  <img src="pic/pipeline.png" /> 
+</p>
+
+<p align="left">
+  <img src="pic/final.gif" width="100%" /> 
+</p>
 
 ## 1 Environment
 
