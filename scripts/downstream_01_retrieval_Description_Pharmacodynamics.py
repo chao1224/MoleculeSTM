@@ -229,7 +229,7 @@ if __name__ == "__main__":
             # This is loading from the pretarined_MegaMolBART
             MegaMolBART_wrapper = MegaMolBART(vocab_path=args.vocab_path, input_dir="../data/pretrained_MegaMolBART/checkpoints", output_dir=None)
             molecule_model = MegaMolBART_wrapper.model
-            print("Loading from ../data/pretrained_MegaMolBART/checkpoint.")
+            print("Loading from ../data/pretrained_MegaMolBART/checkpoints.")
         molecule_dim = 256
 
     else:
