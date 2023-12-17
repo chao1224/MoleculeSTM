@@ -86,6 +86,7 @@ As confirmed with PubChem group, performing research on these data is not violat
 3. `bash step_02.sh`. This will download all the SDF files, with SMILES, 2D graph, and computed molecular properties. This may take hours.
 4. `python step_03_filter_out_SDF.py`. This will filter all the molecules with textual descriptions and save them int the SDF file. This may take <2 hours.
 5. `python step_04_merge_SDF.py`. This will gather all the molecules into a single SDF file.
+6. `python step_05_sample_extraction.py`. This will generate the `CID2SMILES.csv` file.
 
 ### 2.2 Downstream Datasets
 
