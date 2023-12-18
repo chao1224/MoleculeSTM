@@ -152,7 +152,7 @@ For KV-PLM, check this [repo](https://github.com/thunlp/KV-PLM) and checkpoints 
 ### 3.5 Toy Checkpoints for MoleculeSTM
 We provide two sets of demo checkpoints at [this huggingface link](https://huggingface.co/chao1224/MoleculeSTM). Or you can use the following python script:
 ```
-from huggingface_hub import HfApi
+from huggingface_hub import HfApi, snapshot_download
 api = HfApi()
 snapshot_download(repo_id="chao1224/MoleculeSTM", repo_type="model", cache_dir='.')
 ```
