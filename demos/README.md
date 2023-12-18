@@ -6,7 +6,7 @@ First, please check [this Hugging Face link](https://huggingface.co/chao1224/Mol
 
 Or you can run the following (also in `download.py`):
 ```
-from huggingface_hub import HfApi, hf_hub_download
+from huggingface_hub import HfApi, snapshot_download
 api = HfApi()
 snapshot_download(repo_id="chao1224/MoleculeSTM", repo_type="model", local_dir='.', allow_patterns="*demo*")
 ```
