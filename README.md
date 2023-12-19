@@ -4,6 +4,7 @@ Authors: Shengchao Liu, Weili Nie, Chengpeng Wang, Jiarui Lu, Zhuoran Qiao, Ling
 
 <sup>\*</sup> jointly supervised
 
+[[Paper](https://www.nature.com/articles/s42256-023-00759-6)]
 [[Project Page](https://chao1224.github.io/MoleculeSTM)] [[ArXiv](https://arxiv.org/abs/2212.10789)]
 [[Datasets on Hugging Face](https://huggingface.co/datasets/chao1224/MoleculeSTM/tree/main)] [[Checkpoints on Hugging Face](https://huggingface.co/chao1224/MoleculeSTM/tree/main)]
 
