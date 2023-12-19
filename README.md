@@ -297,10 +297,19 @@ Please check the `demos` folder. This may require you download the dataset and c
 ## Cite Us
 Feel free to cite this work if you find it useful to you!
 ```
-@article{liu2022moleculestm,
-  title={Multi-modal molecule structure-text model for text-based retrieval and editing},
-  author={Liu, Shengchao and Nie, Weili and Wang, Chengpeng and Lu, Jiarui and Qiao, Zhuoran and Liu, Ling and Tang, Jian and Xiao, Chaowei and Anandkumar, Anima},
-  journal={arXiv preprint arXiv:2212.10789},
-  year={2022}
+@article{liu2023moleculestm,
+    title={Multi-modal molecule structure-text model for text-based retrieval and editing},
+    author={Liu, Shengchao and Nie, Weili and Wang, Chengpeng and Lu, Jiarui and Qiao, Zhuoran and Liu, Ling and Tang, Jian and Xiao, Chaowei and Anandkumar, Anima},
+    title={Multi-modal molecule structure--text model for text-based retrieval and editing},
+    journal={Nature Machine Intelligence},
+    year={2023},
+    month={Dec},
+    day={01},
+    volume={5},
+    number={12},
+    pages={1447-1457},
+    issn={2522-5839},
+    doi={10.1038/s42256-023-00759-6},
+    url={https://doi.org/10.1038/s42256-023-00759-6}
 }
 ```
