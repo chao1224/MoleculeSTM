@@ -109,7 +109,7 @@ We have included them in [the Hugging Face link](https://huggingface.co/datasets
     - `ChEMBL_data` for binding editing
 - `MoleculeNet_data` for molecular property prediction
 
-## 3 Pre-trained Checkpoints from Previous Works
+## 3 Checkpoints
 
 ### 3.1 SciBERT
 This can be done by simplying calling the following for SciBERT:
