@@ -106,6 +106,7 @@ We have included them in [the Hugging Face link](https://huggingface.co/datasets
 - `Editing_data` for zero-shot text-guided (step 2 in editing)
     - `single_multi_property_SMILES.txt` for single-objective, multi-objective, binding-affinity-based, and drug relevance editing
     - `neighbor2drug` for neighborhood searching for patent drug molecules
+    - `ChEMBL_data` for binding editing
 - `MoleculeNet_data` for molecular property prediction
 
 ## 3 Pre-trained Checkpoints from Previous Works
@@ -164,6 +165,8 @@ from huggingface_hub import HfApi, snapshot_download
 api = HfApi()
 snapshot_download(repo_id="chao1224/MoleculeSTM", repo_type="model", local_dir='.', allow_patterns="*MoleculeSTM*")
 ```
+
+We further provide the optimal checkpoints for each downstream task under the `scripts` folder (README file).
 
 ## 4 Scripts and Demos
 

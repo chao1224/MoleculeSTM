@@ -1,6 +1,6 @@
 # Dataset Specifications for MoleculeSTM
 
-We provide the raw dataset (after preprocessing) at [this Hugging Face link](https://huggingface.co/datasets/chao1224/MoleculeSTM). Or you can download them by running `python download.py`.
+We provide the raw dataset (after preprocessing) at [this Hugging Face link](https://huggingface.co/datasets/chao1224/MoleculeSTM). Or you can download them by running `python download_datasets.py`.
 
 ## 1. Pretraining Dataset: PubChemSTM
 
@@ -14,4 +14,9 @@ Please refer to the following for three downstream tasks:
 - `Editing_data` for zero-shot text-guided (step 2 in editing)
     - `single_multi_property_SMILES.txt` for single-objective, multi-objective, binding-affinity-based, and drug relevance editing
     - `neighbor2drug` for neighborhood searching for patent drug molecules
+    - `ChEMBL_data` for binding editing
 - `MoleculeNet_data` for molecular property prediction
+
+# Checkpoints Specifications for MoleculeSTM
+
+We provide the optimal checkpoints at [this Hugging Face link](https://huggingface.co/chao1224/MoleculeSTM). Or you can download them by running `python download_checkpoints.py`.
