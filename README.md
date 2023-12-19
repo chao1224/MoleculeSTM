@@ -4,6 +4,7 @@ Authors: Shengchao Liu, Weili Nie, Chengpeng Wang, Jiarui Lu, Zhuoran Qiao, Ling
 
 <sup>\*</sup> jointly supervised
 
+[[Paper](https://www.nature.com/articles/s42256-023-00759-6)]
 [[Project Page](https://chao1224.github.io/MoleculeSTM)] [[ArXiv](https://arxiv.org/abs/2212.10789)]
 [[Datasets on Hugging Face](https://huggingface.co/datasets/chao1224/MoleculeSTM/tree/main)] [[Checkpoints on Hugging Face](https://huggingface.co/chao1224/MoleculeSTM/tree/main)]
 
@@ -71,7 +72,7 @@ We also provide the docker in `Dockerfile`.
 
 ## 2 Datasets and Preprocessing
 
-We provide the raw dataset (after preprocessing) at [this Hugging Face link](https://huggingface.co/datasets/chao1224/MoleculeSTM). Or you can use the following python script (see `data/download.py`):
+We provide the raw dataset (after preprocessing) at [this Hugging Face link](https://huggingface.co/datasets/chao1224/MoleculeSTM). Or you can use the following python script:
 ```
 from huggingface_hub import HfApi, snapshot_download
 api = HfApi()
@@ -105,9 +106,10 @@ We have included them in [the Hugging Face link](https://huggingface.co/datasets
 - `Editing_data` for zero-shot text-guided (step 2 in editing)
     - `single_multi_property_SMILES.txt` for single-objective, multi-objective, binding-affinity-based, and drug relevance editing
     - `neighbor2drug` for neighborhood searching for patent drug molecules
+    - `ChEMBL_data` for binding editing
 - `MoleculeNet_data` for molecular property prediction
 
-## 3 Pre-trained Checkpoints from Previous Works
+## 3 Checkpoints
 
 ### 3.1 SciBERT
 This can be done by simplying calling the following for SciBERT:
@@ -149,13 +151,22 @@ pretrained_GraphMVP/
 ### 3.4 Baseline KV-PLM
 For KV-PLM, check this [repo](https://github.com/thunlp/KV-PLM) and checkpoints on [Google Drive link](https://drive.google.com/drive/folders/1xig3-3JG63kR-Xqj1b9wkPEdxtfD_4IX).
 
-### 3.5 Toy Checkpoints for MoleculeSTM
+### 3.5 Checkpoints for MoleculeSTM
 We provide two sets of demo checkpoints at [this huggingface link](https://huggingface.co/chao1224/MoleculeSTM). Or you can use the following python script:
 ```
-from huggingface_hub import HfApi
+from huggingface_hub import HfApi, snapshot_download
 api = HfApi()
 snapshot_download(repo_id="chao1224/MoleculeSTM", repo_type="model", cache_dir='.')
 ```
+
+For the optimal results reported in the paper, please use the following script:
+```
+from huggingface_hub import HfApi, snapshot_download
+api = HfApi()
+snapshot_download(repo_id="chao1224/MoleculeSTM", repo_type="model", local_dir='.', allow_patterns="*MoleculeSTM*")
+```
+
+We further provide the optimal checkpoints for each downstream task under the `scripts` folder (README file).
 
 ## 4 Scripts and Demos
 
@@ -286,10 +297,19 @@ Please check the `demos` folder. This may require you download the dataset and c
 ## Cite Us
 Feel free to cite this work if you find it useful to you!
 ```
-@article{liu2022moleculestm,
-  title={Multi-modal molecule structure-text model for text-based retrieval and editing},
-  author={Liu, Shengchao and Nie, Weili and Wang, Chengpeng and Lu, Jiarui and Qiao, Zhuoran and Liu, Ling and Tang, Jian and Xiao, Chaowei and Anandkumar, Anima},
-  journal={arXiv preprint arXiv:2212.10789},
-  year={2022}
+@article{liu2023moleculestm,
+    title={Multi-modal molecule structure-text model for text-based retrieval and editing},
+    author={Liu, Shengchao and Nie, Weili and Wang, Chengpeng and Lu, Jiarui and Qiao, Zhuoran and Liu, Ling and Tang, Jian and Xiao, Chaowei and Anandkumar, Anima},
+    title={Multi-modal molecule structure--text model for text-based retrieval and editing},
+    journal={Nature Machine Intelligence},
+    year={2023},
+    month={Dec},
+    day={01},
+    volume={5},
+    number={12},
+    pages={1447-1457},
+    issn={2522-5839},
+    doi={10.1038/s42256-023-00759-6},
+    url={https://doi.org/10.1038/s42256-023-00759-6}
 }
 ```

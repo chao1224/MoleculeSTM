@@ -201,13 +201,13 @@ if __name__ == "__main__":
     parser.add_argument("--epochs", type=int, default=100)
     parser.add_argument("--decay", type=float, default=0)
     parser.add_argument("--generation_lr", type=float, default=1e-2)
-    parser.add_argument("--MoleculeSTM_lr", type=float, default=1e-2)
+    parser.add_argument("--MoleculeSTM_lr", type=float, default=1e-2) # optimal: 1e-2 or 1e-3
     parser.add_argument("--T", type=float, default=0.1)
-    parser.add_argument("--SSL_loss", type=str, default="EBM_NCE", choices=["EBM_NCE", "InfoNCE", "RR"])
+    parser.add_argument("--SSL_loss", type=str, default="RR", choices=["EBM_NCE", "InfoNCE", "RR"])
     parser.add_argument("--CL_neg_samples", type=int, default=1)
     parser.add_argument('--use_normalize', dest='normalize', action='store_true')
     parser.add_argument('--no_normalize', dest='normalize', action='store_false')
-    parser.set_defaults(normalize=True)
+    parser.set_defaults(normalize=False)
 
     args = parser.parse_args()
     print(args)
