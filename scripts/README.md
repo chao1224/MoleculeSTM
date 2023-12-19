@@ -29,35 +29,35 @@ Most of the checkpoints perform quite stable performance, yet here we provide de
 
 | Type | Checkpoints | Tables/Figures in Manuscript|
 | -- | -- | -- |
-| SMILES | `pretrained_MoleculeSTM_Raw/SciBERT-MegaMolBART-3e-5-1-1e-4-1-InfoNCE-0.1-32-32` | Figure 4 / Figure 5 / Table 14 (ArXiv) |
-| Graph | `pretrained_MoleculeSTM/SciBERT-Graph-3e-5-1-1e-4-1-EBM_NCE-0.1-32-32` | Figure 2 / Figure 5 / Table 14 (ArXiv) |
+| SMILES | `pretrained_MoleculeSTM_Raw/SciBERT-MegaMolBART-3e-5-1-1e-4-1-InfoNCE-0.1-32-32` | Figure 4 / Figure 5 / Sec D.2 |
+| Graph | `pretrained_MoleculeSTM/SciBERT-Graph-3e-5-1-1e-4-1-EBM_NCE-0.1-32-32` | Figure 2 / Figure 5 / Sec D.2|
 
 ### 2.2 Multi-objective molecule editing
 
 | Type | Checkpoints | Tables/Figures in Manuscript|
 | -- | -- | -- |
-| SMILES | `pretrained_MoleculeSTM/SciBERT-MegaMolBART-3e-5-1-1e-4-1-InfoNCE-0.1-32-32` | Figure 4 / Figure 5 / Table 18 (ArXiv) |
-| Graph | `pretrained_MoleculeSTM/SciBERT-Graph-3e-5-1-1e-4-1-EBM_NCE-0.1-32-32` | Figure 2 / Figure 5 / Table 18 (ArXiv) |
+| SMILES | `pretrained_MoleculeSTM/SciBERT-MegaMolBART-3e-5-1-1e-4-1-InfoNCE-0.1-32-32` | Figure 4 / Figure 5 / Sec D.3 |
+| Graph | `pretrained_MoleculeSTM/SciBERT-Graph-3e-5-1-1e-4-1-EBM_NCE-0.1-32-32` | Figure 2 / Figure 5 / Sec D.3 |
 
 ### 2.3 Binding-affinity-based molecule editing
 
 | Type | Checkpoints | Tables/Figures in Manuscript|
 | -- | -- | -- |
-| SMILES | `pretrained_MoleculeSTM/SciBERT-MegaMolBART-1e-5-1-1e-4-1-EBM_NCE-0.1-32-32` | Figure 4 / Figure 5 / Table 22 (ArXiv) |
-| Graph | `pretrained_MoleculeSTM/SciBERT-Graph-3e-5-1-1e-4-1-EBM_NCE-0.1-32-32` | Figure 2 / Figure 5 / Table 22 (ArXiv) |
+| SMILES | `pretrained_MoleculeSTM/SciBERT-MegaMolBART-1e-5-1-1e-4-1-EBM_NCE-0.1-32-32` | Figure 4 / Figure 5 / Sec D.4 |
+| Graph | `pretrained_MoleculeSTM/SciBERT-Graph-3e-5-1-1e-4-1-EBM_NCE-0.1-32-32` | Figure 2 / Figure 5 / Sec D.4 |
 
 ### 2.4 Drug relevance editing
 
 | Type | Checkpoints | Tables/Figures in Manuscript|
 | -- | -- | -- |
-| SMILES | `pretrained_MoleculeSTM/SciBERT-MegaMolBART-1e-5-1-1e-4-1-EBM_NCE-0.1-32-32` | Table 23 (ArXiv) |
-| Graph | `pretrained_MoleculeSTM/SciBERT-Graph-3e-5-1-1e-4-1-EBM_NCE-0.1-32-32` |  Table 23 (ArXiv) |
+| SMILES | `pretrained_MoleculeSTM/SciBERT-MegaMolBART-1e-5-1-1e-4-1-EBM_NCE-0.1-32-32` | Sec D.5 |
+| Graph | `pretrained_MoleculeSTM/SciBERT-Graph-3e-5-1-1e-4-1-EBM_NCE-0.1-32-32` |  Sec D.5 |
 
 ### 2.5 Neighborhood searching
 
 | Type | Checkpoints | Tables/Figures in Manuscript|
 | -- | -- | -- |
-| SMILES | `pretrained_MoleculeSTM_Raw/SciBERT-MegaMolBART-3e-5-1-1e-4-1-InfoNCE-0.1-32-32` | Figure 5 / Table 24 (ArXiv) |
+| SMILES | `pretrained_MoleculeSTM_Raw/SciBERT-MegaMolBART-3e-5-1-1e-4-1-InfoNCE-0.1-32-32` | Figure 5 / Sec D.6 |
 
 
 ## 3 Downstream: Molecular Property Prediction
