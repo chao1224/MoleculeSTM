@@ -149,12 +149,19 @@ pretrained_GraphMVP/
 ### 3.4 Baseline KV-PLM
 For KV-PLM, check this [repo](https://github.com/thunlp/KV-PLM) and checkpoints on [Google Drive link](https://drive.google.com/drive/folders/1xig3-3JG63kR-Xqj1b9wkPEdxtfD_4IX).
 
-### 3.5 Toy Checkpoints for MoleculeSTM
+### 3.5 Checkpoints for MoleculeSTM
 We provide two sets of demo checkpoints at [this huggingface link](https://huggingface.co/chao1224/MoleculeSTM). Or you can use the following python script:
 ```
 from huggingface_hub import HfApi, snapshot_download
 api = HfApi()
 snapshot_download(repo_id="chao1224/MoleculeSTM", repo_type="model", cache_dir='.')
+```
+
+For the optimal results reported in the paper, please use the following script:
+```
+from huggingface_hub import HfApi, snapshot_download
+api = HfApi()
+snapshot_download(repo_id="chao1224/MoleculeSTM", repo_type="model", local_dir='.', allow_patterns="*MoleculeSTM*")
 ```
 
 ## 4 Scripts and Demos
