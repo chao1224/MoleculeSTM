@@ -72,7 +72,7 @@ We also provide the docker in `Dockerfile`.
 
 ## 2 Datasets and Preprocessing
 
-We provide the raw dataset (after preprocessing) at [this Hugging Face link](https://huggingface.co/datasets/chao1224/MoleculeSTM). Or you can use the following python script (see `data/download.py`):
+We provide the raw dataset (after preprocessing) at [this Hugging Face link](https://huggingface.co/datasets/chao1224/MoleculeSTM). Or you can use the following python script:
 ```
 from huggingface_hub import HfApi, snapshot_download
 api = HfApi()
